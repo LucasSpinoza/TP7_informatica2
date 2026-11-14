@@ -14,7 +14,6 @@
  *   Arduino -> PC   "E<n>:<v>"  estado de la entrada n
  *                   "L<n>:<v>"  estado de la salida n
  *   PC -> Arduino   "L<n>:<v>"  ordena encender (1) o apagar (0) el LED n
- *                   "?"         pide el estado completo
  *
  * Modo simulación (sin placa): se activa con SIMULAR_POR_DEFECTO = true, o solo
  * si no se puede abrir el puerto. Las teclas 1 y 2 y el clic sobre E1/E2 imitan
@@ -24,7 +23,7 @@
 import processing.serial.*;
 
 // ---------------------------------------------------------------- Configuración
-final boolean SIMULAR_POR_DEFECTO = true;  // false para usar el Arduino real
+final boolean SIMULAR_POR_DEFECTO = false;  // false para usar el Arduino real
 final int INDICE_PUERTO = 0;               // posición del Arduino en Serial.list()
 final int VELOCIDAD_SERIE = 9600;          // debe coincidir con el firmware
 final int N_CANALES = 2;
@@ -57,8 +56,12 @@ boolean[] entradas = new boolean[N_CANALES];  // true = pulsador apretado
 boolean[] salidas = new boolean[N_CANALES];   // true = LED encendido
 
 // ---------------------------------------------------------------------- Ciclo
-void setup() {
+// settings() es necesaria porque size() recibe constantes y no números literales.
+void settings() {
   size(ANCHO, ALTO);
+}
+
+void setup() {
   textAlign(CENTER, CENTER);
   if (!simulado) {
     abrirPuerto();
@@ -86,7 +89,6 @@ void abrirPuerto() {
   try {
     puerto = new Serial(this, disponibles[INDICE_PUERTO], VELOCIDAD_SERIE);
     puerto.bufferUntil('\n');
-    puerto.write("?\n");                 // pide el estado inicial
   }
   catch (Exception e) {
     println("No se pudo abrir el puerto (" + e.getMessage() + "). Modo simulación.");

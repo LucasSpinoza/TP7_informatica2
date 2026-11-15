@@ -1,8 +1,12 @@
 # Esquemático
 
-Diagrama de conexiones del circuito (también armado y simulado en Tinkercad Circuits). Podés reemplazar esta imagen por la captura de tu Tinkercad manteniendo el nombre `esquematico.png`.
+Diagrama de conexiones del circuito (también armado y simulado en Tinkercad Circuits). `esquematico.png`.
+
+
 
 ![Esquemático del circuito](esquematico.png)
+
+<img width="1041" height="677" alt="image" src="https://github.com/user-attachments/assets/58348341-b39f-43fc-aa4b-e493f65cafd8" />
 
 ## Lista de materiales
 

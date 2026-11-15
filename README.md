@@ -2,7 +2,7 @@
 
 **Autor:** [Lucas Spinoza]
 **Cátedra:** Informática II – Ingeniería Electrónica (UTN FRM) – 2026
-**Video de demostración:** [ENLACE AL VIDEO] *(se ve mi rostro y el TP funcionando)*
+**Video de demostración:** [https://drive.google.com/drive/folders/1XMItEYxsjsmbnw48vRdS9fkoDv9U5q0H?usp=drive_link] *(se ve mi rostro y el TP funcionando)*
 
 ## Descripción
 
